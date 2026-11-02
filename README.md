@@ -16,7 +16,7 @@ Per la build: `npm run build`.
 - Confermare con l'impresa le sei categorie di servizio e il testo descrittivo.
 - Inserire recapiti, zona servita e un eventuale collegamento WhatsApp reale.
 - Collegare il modulo a un backend o servizio di form, gestire gli errori di rete e pubblicare l'informativa privacy completa prima di raccogliere dati.
-- Sostituire la fotografia del logo con il file grafico originale ad alta qualità, se disponibile. Il sito usa la fotografia fornita, conservata senza modifiche in `public/assets/logo-originale.png`.
+- Il sito usa il logo scontornato approvato, in formato WebP (`public/assets/logo-scontornato.webp`). La sorgente trasparente è in `branding/logo-scontornato.png`; la foto di riferimento è in `branding/logo-riferimento.png`. Non è disponibile una versione SVG vettoriale.
 
 Il modulo corrente verifica i campi nel browser e mostra chiaramente che **nessun dato viene inviato o salvato**.
 
