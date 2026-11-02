@@ -11,6 +11,12 @@ npm run dev
 
 Per la build: `npm run build`.
 
+## Pubblicazione su GitHub Pages
+
+Il workflow `.github/workflows/deploy.yml` pubblica automaticamente la branch `main` su
+`https://aledtr77.github.io/soft-clean-impresa-di-pulizia/`. La build imposta il percorso
+di base del repository; la build locale e quella per altri host restano alla radice (`/`).
+
 ## Da completare prima dell'uso pubblico
 
 - Confermare con l'impresa le sei categorie di servizio e il testo descrittivo.

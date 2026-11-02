@@ -3,6 +3,7 @@ import tailwindcss from '@tailwindcss/vite';
 import { resolve } from 'node:path';
 
 export default defineConfig({
+  base: process.env.GITHUB_PAGES === 'true' ? '/soft-clean-impresa-di-pulizia/' : '/',
   plugins: [tailwindcss()],
   build: {
     rollupOptions: {
