@@ -20,6 +20,9 @@ if (menuButton && mobileNav) {
     mobileNav.hidden = !opening;
   });
   mobileNav.querySelectorAll('a').forEach((link) => link.addEventListener('click', closeMenu));
+  document.addEventListener('click', (event) => {
+    if (!mobileNav.hidden && !mobileNav.contains(event.target) && !menuButton.contains(event.target)) closeMenu();
+  });
   document.addEventListener('keydown', (event) => {
     if (event.key === 'Escape' && !mobileNav.hidden) {
       closeMenu();
