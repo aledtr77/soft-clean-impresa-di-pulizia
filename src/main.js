@@ -2,36 +2,6 @@ import './style.css';
 
 document.documentElement.classList.add('js');
 
-const menuButton = document.querySelector('.menu-toggle');
-const mobileNav = document.querySelector('#mobile-nav');
-
-function closeMenu() {
-  if (!menuButton || !mobileNav) return;
-  menuButton.setAttribute('aria-expanded', 'false');
-  menuButton.setAttribute('aria-label', 'Apri il menu');
-  mobileNav.hidden = true;
-}
-
-if (menuButton && mobileNav) {
-  menuButton.addEventListener('click', () => {
-    const opening = menuButton.getAttribute('aria-expanded') !== 'true';
-    menuButton.setAttribute('aria-expanded', String(opening));
-    menuButton.setAttribute('aria-label', opening ? 'Chiudi il menu' : 'Apri il menu');
-    mobileNav.hidden = !opening;
-  });
-  mobileNav.querySelectorAll('a').forEach((link) => link.addEventListener('click', closeMenu));
-  document.addEventListener('click', (event) => {
-    if (!mobileNav.hidden && !mobileNav.contains(event.target) && !menuButton.contains(event.target)) closeMenu();
-  });
-  document.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape' && !mobileNav.hidden) {
-      closeMenu();
-      menuButton.focus();
-    }
-  });
-  window.matchMedia('(min-width: 981px)').addEventListener('change', closeMenu);
-}
-
 const revealItems = document.querySelectorAll('.reveal');
 if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
   const observer = new IntersectionObserver((entries) => {
